@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   //#region functions
   form() {
     this.signInForm = this.fb.group({
-      email: ['', Validators.email],
-      password: ['', Validators.required],
+      email: ['test@gmail.com', [Validators.email,Validators.required]],
+      password: ['123', Validators.required],
     });
   }
 
