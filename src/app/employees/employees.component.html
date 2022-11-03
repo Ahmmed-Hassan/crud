@@ -1,0 +1,59 @@
+<div class="containert">
+
+<div class="table-container">
+    <button  mat-raised-button (click)="openDialog()" class="btn"  >
+        New
+        </button>
+    <div class="table mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+
+         
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+  
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="phone">
+              <th mat-header-cell *matHeaderCellDef> phone </th>
+              <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+          
+      
+            <ng-container matColumnDef="address">
+              <th mat-header-cell *matHeaderCellDef> address </th>
+              <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+            </ng-container>
+            <ng-container matColumnDef="buttons">
+                <th *matHeaderCellDef mat-header-cell >Actions</th>
+                <td *matCellDef="let row" mat-cell>
+                  <div class="btn-container">
+
+                    <button (click)="openEditDialog(row)" class="btn2">
+                        Edit
+                    </button>
+                    <button (click)="confirmDelete(row.id)" class="btn3">
+                        Delete
+                    </button>
+                  </div>
+          
+                </td>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+          </table>
+          <mat-paginator
+          [length]="10"
+          [pageSize]="5"
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons >
+        </mat-paginator>
+    </div>
+</div>
+</div>

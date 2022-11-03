@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "ahmed2567",
+      "password": "2567"
+    }
+  ],
+  "employees": [
+    {
+      "id": 2,
+      "name": "Ahmed Mohammed",
+      "phone": "010123456",
+      "address": "al maadi"
+    },
+    {
+      "id": 3,
+      "name": "Abdallah Medhat",
+      "phone": "010123456",
+      "address": "al maadi"
+    },
+    {
+      "name": "Mohamed Amr",
+      "phone": "010123456",
+      "address": "el minya",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "name": "Mohamed Amr",
+      "phone": "010123456",
+      "address": "al maadi"
+    },
+    {
+      "id": 10,
+      "name": "Mohamed Amr",
+      "phone": "010123456",
+      "address": "al maadi"
+    },
+    {
+      "name": "Ahmed Hassan",
+      "phone": "01020716629",
+      "address": "Tagamouu",
+      "id": 11
+    },
+    {
+      "name": "Amr emad",
+      "phone": "0101234567",
+      "address": "10th of ramadan",
+      "id": 12
+    },
+    {
+      "name": "Abd El  rahman Mohamed",
+      "phone": "0112345859",
+      "address": "5th Settelment",
+      "id": 13
+    },
+    {
+      "name": "Mohammed Wael",
+      "phone": "010324344",
+      "address": "10th of ramadan",
+      "id": 14
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>New Employee</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <label>Name</label>
+        <br>
+        <input formControlName = "name" type="text" class="">
+        <br>
+        <label>Phone</label>
+        <br>
+        <input formControlName = "phone" type="text" class="">
+        <br>
+        <label>Address</label>
+        <br>
+        <input formControlName = "address" type="text" class="">
+        <br>
+        <button class="btn"  type="submit">Submit</button>
+    </form>
+</div>
+
+
+
+
+

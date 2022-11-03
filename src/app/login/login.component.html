@@ -1,0 +1,25 @@
+<div class="cntnr">
+  <div class="login-container">
+    <div class="login">
+      <div>
+        <h1>Sign In</h1>
+      </div>
+      <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <div class="inputs">
+          <input type="email" placeholder="User Name" formControlName="email" />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="submit-btn">
+          <button class="btn" type="submit" [disabled]="!signInForm.valid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
