@@ -1,3 +1,4 @@
+import { LoginGaurdService } from './Services/login-gaurd.service';
 import { EmployeesComponent } from './employees/employees.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,7 +9,7 @@ const routes: Routes = [
   
   {path:'employees', canActivate:[AuthGaurdService],component: EmployeesComponent},
   {path: '', redirectTo:'employees', pathMatch:'full'},
-  {path: 'login' ,component:LoginComponent},
+  {path: 'login' ,canActivate: [LoginGaurdService],component:LoginComponent},
   {path:'**',redirectTo:'employees'}
  
 ];
