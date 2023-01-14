@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-  get isLoggedIn(): boolean {
+  get isLoggedIn() {
     return this.authService.isLoggedIn;
   }
   //#endregion functions

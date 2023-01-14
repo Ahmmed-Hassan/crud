@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGaurdService } from './Services/auth-gaurd.service';
 
 const routes: Routes = [
+  
   {path:'employees', canActivate:[AuthGaurdService],component: EmployeesComponent},
   {path: '', redirectTo:'employees', pathMatch:'full'},
   {path: 'login' ,component:LoginComponent},

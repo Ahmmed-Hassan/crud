@@ -9,10 +9,10 @@ export class AuthService implements OnInit{
   user:boolean;
   // userName:any;
   // redirectUrl!: string;
-  get isLoggedIn(): boolean {
+  get isLoggedIn() {
     // debugger
-   
-    return this.user;
+  let x =sessionStorage.getItem('user')
+    return x;
   }
 constructor(private userService:UserService) { 
 }
@@ -24,6 +24,7 @@ login(data:string): any {
 
   if(data){
     this.user = true
+  sessionStorage.setItem('user', 'true')
   }
  
   
@@ -31,6 +32,7 @@ login(data:string): any {
   
   }
 logout(): void {
+  sessionStorage.setItem('user', 'false')
   this.user = false;
 }
 }
