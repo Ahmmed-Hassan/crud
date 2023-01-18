@@ -1,6 +1,6 @@
 //#region imports
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeesComponent } from '../employees/employees.component';
 import { EmployeesService } from '../Services/employees.service';
@@ -31,9 +31,9 @@ export class EditDialogComponent implements OnInit {
   //#region functions
   form() {
     this.employeeForm = this.fb.group({
-      name: [this.data.name],
-      phone: [this.data.phone],
-      address: [this.data.address],
+      name: [this.data.name, [Validators.required]],
+      phone: [this.data.phone, [Validators.required]],
+      address: [this.data.phone, [Validators.required]],
       // id:[this.data.id]
     });
   }

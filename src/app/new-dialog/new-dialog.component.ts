@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 //#region imports
 import { EmployeesService } from './../Services/employees.service';
 import { EmployeesComponent } from './../employees/employees.component';
@@ -26,9 +27,9 @@ export class NewDialogComponent implements OnInit {
   //#region hooks
   ngOnInit(): void {
     this.employeeForm = this.fb.group({
-      name: [],
-      phone: [],
-      address: [],
+      name: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
     });
   }
   //#endregion hooks

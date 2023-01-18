@@ -13,7 +13,7 @@
         <br>
         <input formControlName = "address" type="text" class="">
         <br>
-        <button class="btn"  type="submit">Submit</button>
+        <button [disabled]="employeeForm.invalid" class="btn"  type="submit">Submit</button>
     </form>
 </div>
 
