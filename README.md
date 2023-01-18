@@ -8,5 +8,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Json Server
 
-Run `json-server --watch db.json` to launch Json Server Backend.
+Run `json-server --watch db.json` to launch [Json Server](https://www.npmjs.com/package/json-server) Backend.
 
