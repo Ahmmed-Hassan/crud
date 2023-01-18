@@ -32,7 +32,7 @@ export class EmployeesComponent implements OnInit {
   //#region hooks
   ngOnInit(): void {
     this.getEmployees();
-    this.alertify.success('logged in Successfully');
+    
   }
   //#endregion hooks
   //#region functions

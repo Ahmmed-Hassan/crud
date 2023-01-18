@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { AlertifyService } from './alertify.service';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 import { Injectable, OnInit } from '@angular/core';
@@ -7,32 +9,31 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class AuthService implements OnInit{
   user:boolean;
+  private _baseURL = 'http://localhost:3000/';
   // userName:any;
   // redirectUrl!: string;
   get isLoggedIn() {
     // debugger
-  let x =sessionStorage.getItem('user')
+  let x =localStorage.getItem('token')
     return x;
   }
-constructor(private userService:UserService) { 
+constructor(private userService:UserService, private alertify:AlertifyService, private _http: HttpClient) { 
 }
 ngOnInit(): void {
 
 }
-login(data:string): any {
-  debugger
 
-  if(data){
-    this.user = true
-  sessionStorage.setItem('user', 'true')
-  }
+login(email: string, password: string): Observable<Array<Object>> {
+  return this._http.get<Array<Object>>(
+    this._baseURL + `users?email=${email}&password=${password}`
+  );
+}
  
   
    
   
-  }
 logout(): void {
-  sessionStorage.setItem('user', 'false')
-  this.user = false;
+  localStorage.setItem('token', 'false')
+  this.alertify.success('logged out Successfully');
 }
 }

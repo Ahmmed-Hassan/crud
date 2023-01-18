@@ -1,3 +1,4 @@
+import { AlertifyService } from './../Services/alertify.service';
 //#region imports
 import { UserService } from './../Services/user.service';
 import { AuthService } from './../Services/Auth.service';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertify: AlertifyService
   ) {}
   //#endregion constructor
   //#region hooks
@@ -37,9 +39,19 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.signInForm && this.signInForm.valid) {
-      this.authService.login(this.signInForm.value);
+      this.authService.login(this.signInForm.value.email ,this.signInForm.value.password ).subscribe(
+        res =>{
+          if (res.length > 0) {
+            localStorage.setItem('token', 'true');
+            this.alertify.success('logged in Successfully');
+            this.router.navigate(['/employees']);
+          } else {
+            localStorage.setItem('token', 'false');
+          }
+        }
+      );
     }
-    this.router.navigate(['/employees']);
+   
   }
   //#endregion functions
 }

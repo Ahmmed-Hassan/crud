@@ -17,6 +17,7 @@ canActivate(): boolean {
 
 checkIsLoggedIn():boolean{
   if(this.authService.isLoggedIn == 'true'){
+    
     return true;
   }else{
     this.router.navigate(['/login']);
