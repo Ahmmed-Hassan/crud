@@ -33,7 +33,7 @@ export class EditDialogComponent implements OnInit {
     this.employeeForm = this.fb.group({
       name: [this.data.name, [Validators.required]],
       phone: [this.data.phone, [Validators.required]],
-      address: [this.data.phone, [Validators.required]],
+      address: [this.data.address, [Validators.required]],
       // id:[this.data.id]
     });
   }
