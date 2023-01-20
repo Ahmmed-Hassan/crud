@@ -68,10 +68,9 @@ export class EmployeesComponent implements OnInit {
   confirmDelete(id: any) {
     this.alertify.confirm('Are you sure do you want to delete!', () => {
       this.employeesService
-        .deleteEmployee(id)
-        .subscribe(() => this.getEmployees());
-      this.alertify.success('Deleted Succesfully');
-    });
+      .deleteEmployee(id)
+      .subscribe(() => this.getEmployees());
+    }, "Delete Confirmation !");
   }
   //#endregion functions
 }

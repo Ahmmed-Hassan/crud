@@ -6,10 +6,13 @@ declare let alertify:any;
 export class AlertifyService {
 
 constructor() { }
-confirm(message:string,okCallBack:()=>any){
+confirm(message:string,okCallBack:()=>any,title:string){
   alertify.confirm(message,function(e){
-    if(e){okCallBack()}else{}
-  });
+  if(e){okCallBack()}else{}
+ });
+ setTimeout(()=>{
+  document.getElementsByClassName("ajs-header")[0].innerHTML = title;
+ },0);
 }
 
 success(message :string){
