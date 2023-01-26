@@ -5,7 +5,7 @@ import { Observable, shareReplay } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeesService {
-  url = `http://localhost:3000/api/employees`;
+  url = `/api/employees`;
   constructor(private http:HttpClient ) { 
 
   }
