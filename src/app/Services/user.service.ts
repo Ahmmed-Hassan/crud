@@ -6,7 +6,7 @@ import { Observable, shareReplay } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  url = `http://localhost:3000/api/users`;
+  url = `http://localhost:3000/users`;
   constructor(private http:HttpClient ) { 
 
   }
